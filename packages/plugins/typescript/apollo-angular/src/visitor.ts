@@ -37,8 +37,8 @@ export interface ApolloAngularPluginConfig extends ClientSideBasePluginConfig {
 }
 
 export class ApolloAngularVisitor extends ClientSideBaseVisitor<
-  ApolloAngularRawPluginConfig,
-  ApolloAngularPluginConfig
+    ApolloAngularRawPluginConfig,
+    ApolloAngularPluginConfig
 > {
   private _externalImportPrefix = '';
   private _operationsToInclude: {
@@ -53,57 +53,57 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
   private dependencyInjectionArgs = '';
 
   constructor(
-    schema: GraphQLSchema,
-    fragments: LoadedFragment[],
-    private _allOperations: OperationDefinitionNode[],
-    rawConfig: ApolloAngularRawPluginConfig,
-    documents?: Types.DocumentFile[],
+      schema: GraphQLSchema,
+      fragments: LoadedFragment[],
+      private _allOperations: OperationDefinitionNode[],
+      rawConfig: ApolloAngularRawPluginConfig,
+      documents?: Types.DocumentFile[],
   ) {
     super(
-      schema,
-      fragments,
-      rawConfig,
-      {
-        sdkClass: rawConfig.sdkClass,
-        ngModule: rawConfig.ngModule,
-        namedClient: rawConfig.namedClient,
-        serviceName: rawConfig.serviceName,
-        serviceProvidedIn: rawConfig.serviceProvidedIn,
-        serviceProvidedInRoot: rawConfig.serviceProvidedInRoot,
-        querySuffix: rawConfig.querySuffix,
-        mutationSuffix: rawConfig.mutationSuffix,
-        subscriptionSuffix: rawConfig.subscriptionSuffix,
-        additionalDI: getConfigValue(rawConfig.additionalDI, []),
-        apolloAngularPackage: getConfigValue(rawConfig.apolloAngularPackage, 'apollo-angular'),
-        apolloAngularVersion: getConfigValue(rawConfig.apolloAngularVersion, 2),
-        gqlImport: getConfigValue(
-          rawConfig.gqlImport,
-          !rawConfig.apolloAngularVersion || rawConfig.apolloAngularVersion === 2
-            ? `apollo-angular#gql`
-            : null,
-        ),
-        addExplicitOverride: getConfigValue(rawConfig.addExplicitOverride, false),
-      },
-      documents,
+        schema,
+        fragments,
+        rawConfig,
+        {
+          sdkClass: rawConfig.sdkClass,
+          ngModule: rawConfig.ngModule,
+          namedClient: rawConfig.namedClient,
+          serviceName: rawConfig.serviceName,
+          serviceProvidedIn: rawConfig.serviceProvidedIn,
+          serviceProvidedInRoot: rawConfig.serviceProvidedInRoot,
+          querySuffix: rawConfig.querySuffix,
+          mutationSuffix: rawConfig.mutationSuffix,
+          subscriptionSuffix: rawConfig.subscriptionSuffix,
+          additionalDI: getConfigValue(rawConfig.additionalDI, []),
+          apolloAngularPackage: getConfigValue(rawConfig.apolloAngularPackage, 'apollo-angular'),
+          apolloAngularVersion: getConfigValue(rawConfig.apolloAngularVersion, 2),
+          gqlImport: getConfigValue(
+              rawConfig.gqlImport,
+              !rawConfig.apolloAngularVersion || rawConfig.apolloAngularVersion === 2
+                  ? `apollo-angular#gql`
+                  : null,
+          ),
+          addExplicitOverride: getConfigValue(rawConfig.addExplicitOverride, false),
+        },
+        documents,
     );
 
     if (this.config.importOperationTypesFrom) {
       this._externalImportPrefix = `${this.config.importOperationTypesFrom}.`;
 
       if (
-        this.config.documentMode !== DocumentMode.external ||
-        !this.config.importDocumentNodeExternallyFrom
+          this.config.documentMode !== DocumentMode.external ||
+          !this.config.importDocumentNodeExternallyFrom
       ) {
         // eslint-disable-next-line no-console
         console.warn(
-          '"importOperationTypesFrom" should be used with "documentMode=external" and "importDocumentNodeExternallyFrom"',
+            '"importOperationTypesFrom" should be used with "documentMode=external" and "importDocumentNodeExternallyFrom"',
         );
       }
 
       if (this.config.importOperationTypesFrom !== 'Operations') {
         // eslint-disable-next-line no-console
         console.warn(
-          'importOperationTypesFrom only works correctly when left empty or set to "Operations"',
+            'importOperationTypesFrom only works correctly when left empty or set to "Operations"',
         );
       }
     }
@@ -134,26 +134,26 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
 
     if (this.config.sdkClass) {
       const corePackage =
-        this.config.apolloAngularVersion > 1 ? '@apollo/client/core' : 'apollo-client';
+          this.config.apolloAngularVersion > 1 ? '@apollo/client/core' : 'apollo-client';
       imports.push(`import * as ApolloCore from '${corePackage}';`);
     }
 
     const defs: Record<string, { path: string; module: string }> = {};
 
     this._allOperations
-      .filter(op => this._operationHasDirective(op, 'NgModule') || !!this.config.ngModule)
-      .forEach(op => {
-        const def = this._operationHasDirective(op, 'NgModule')
-          ? this._extractNgModule(op)
-          : this._parseNgModule(this.config.ngModule);
+        .filter(op => this._operationHasDirective(op, 'NgModule') || !!this.config.ngModule)
+        .forEach(op => {
+          const def = this._operationHasDirective(op, 'NgModule')
+              ? this._extractNgModule(op)
+              : this._parseNgModule(this.config.ngModule);
 
-        // by setting key as link we easily get rid of duplicated imports
-        // every path should be relative to the output file
-        defs[def.link] = {
-          path: def.path,
-          module: def.module,
-        };
-      });
+          // by setting key as link we easily get rid of duplicated imports
+          // every path should be relative to the output file
+          defs[def.link] = {
+            path: def.path,
+            module: def.module,
+          };
+        });
 
     if (this.config.serviceProvidedIn) {
       const ngModule = this._parseNgModule(this.config.serviceProvidedIn);
@@ -223,7 +223,7 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
 
     if (directives.length > 1) {
       throw new Error(
-        `The ${directive} directive used multiple times in '${operation.name}' operation`,
+          `The ${directive} directive used multiple times in '${operation.name}' operation`,
       );
     }
 
@@ -265,8 +265,8 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
   }
 
   private _getDocumentNodeVariable(
-    node: OperationDefinitionNode,
-    documentVariableName: string,
+      node: OperationDefinitionNode,
+      documentVariableName: string,
   ): string {
     if (this.config.importDocumentNodeExternallyFrom === 'near-operation-file') {
       return `Operations.${documentVariableName}`;
@@ -292,11 +292,11 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
   }
 
   protected buildOperation(
-    node: OperationDefinitionNode,
-    documentVariableName: string,
-    operationType: string,
-    operationResultType: string,
-    operationVariablesTypes: string,
+      node: OperationDefinitionNode,
+      documentVariableName: string,
+      operationType: string,
+      operationResultType: string,
+      operationVariablesTypes: string,
   ): string {
     const serviceName = `${this.convertName(node)}${this._operationSuffix(operationType)}`;
     this._operationsToInclude.push({
@@ -318,8 +318,8 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
   })
   export class ${serviceName} extends Apollo.${operationType}<${operationResultType}, ${operationVariablesTypes}> {
     ${this.config.addExplicitOverride ? 'override ' : ''}document = ${this._getDocumentNodeVariable(
-      node,
-      documentVariableName,
+        node,
+        documentVariableName,
     )};
     ${namedClient !== '' ? (this.config.addExplicitOverride ? 'override ' : '') + namedClient : ''}
     constructor(${this.dependencyInjections}) {
@@ -344,86 +344,113 @@ export class ApolloAngularVisitor extends ClientSideBaseVisitor<
 
     const hasMutations = this._operationsToInclude.find(o => o.operationType === 'Mutation');
     const hasSubscriptions = this._operationsToInclude.find(
-      o => o.operationType === 'Subscription',
+        o => o.operationType === 'Subscription',
     );
     const hasQueries = this._operationsToInclude.find(o => o.operationType === 'Query');
 
+    const isV12Plus = this.config.apolloAngularVersion >= 12;
+
     const allPossibleActions = this._operationsToInclude
-      .map(o => {
-        const operationResultType = this._externalImportPrefix + o.operationResultType;
-        const operationVariablesTypes = this._externalImportPrefix + o.operationVariablesTypes;
+        .map(o => {
+          const operationResultType = this._externalImportPrefix + o.operationResultType;
+          const operationVariablesTypes = this._externalImportPrefix + o.operationVariablesTypes;
 
-        const optionalVariables =
-          !o.node.variableDefinitions ||
-          o.node.variableDefinitions.length === 0 ||
-          o.node.variableDefinitions.every(
-            v => v.type.kind !== Kind.NON_NULL_TYPE || !!v.defaultValue,
-          );
+          const optionalVariables =
+              !o.node.variableDefinitions ||
+              o.node.variableDefinitions.length === 0 ||
+              o.node.variableDefinitions.every(
+                  v => v.type.kind !== Kind.NON_NULL_TYPE || !!v.defaultValue,
+              );
 
-        const options =
-          o.operationType === 'Mutation'
-            ? `${o.operationType}OptionsAlone<${operationResultType}, ${operationVariablesTypes}>`
-            : `${o.operationType}OptionsAlone<${operationVariablesTypes}>`;
+          // For v12+, all OptionsAlone types have <T, V> signature for proper type inference
+          const options = isV12Plus
+              ? `${o.operationType}OptionsAlone<${operationResultType}, ${operationVariablesTypes}>`
+              : o.operationType === 'Mutation'
+                  ? `${o.operationType}OptionsAlone<${operationResultType}, ${operationVariablesTypes}>`
+                  : `${o.operationType}OptionsAlone<${operationVariablesTypes}>`;
 
-        const method = `
+          // For v12+, combine variables into options when calling apollo-angular
+          const callArgs = isV12Plus ? '{ ...options, variables }' : 'variables, options';
+
+          const method = `
 ${camelCase(o.node.name.value)}(variables${
-          optionalVariables ? '?' : ''
-        }: ${operationVariablesTypes}, options?: ${options}) {
-  return this.${camelCase(o.serviceName)}.${actionType(o.operationType)}(variables, options)
+              optionalVariables ? '?' : ''
+          }: ${operationVariablesTypes}, options?: ${options}) {
+  return this.${camelCase(o.serviceName)}.${actionType(o.operationType)}(${callArgs})
 }`;
 
-        let watchMethod: string;
+          let watchMethod: string;
 
-        if (o.operationType === 'Query') {
-          watchMethod = `
+          if (o.operationType === 'Query') {
+            // For v12+, add explicit return type to ensure proper type inference
+            const watchOptions = isV12Plus
+                ? `WatchQueryOptionsAlone<${operationResultType}, ${operationVariablesTypes}>`
+                : `WatchQueryOptionsAlone<${operationVariablesTypes}>`;
+            const returnType = isV12Plus
+                ? `: Apollo.QueryRef<${operationResultType}, ${operationVariablesTypes}>`
+                : '';
+
+            watchMethod = `
 
 ${camelCase(o.node.name.value)}Watch(variables${
-            optionalVariables ? '?' : ''
-          }: ${operationVariablesTypes}, options?: WatchQueryOptionsAlone<${operationVariablesTypes}>) {
-  return this.${camelCase(o.serviceName)}.watch(variables, options)
+                optionalVariables ? '?' : ''
+            }: ${operationVariablesTypes}, options?: ${watchOptions})${returnType} {
+  return this.${camelCase(o.serviceName)}.watch(${callArgs})
 }`;
-        }
-        return [method, watchMethod].join('');
-      })
-      .map(s => indentMultiline(s, 2));
+          }
+          return [method, watchMethod].join('');
+        })
+        .map(s => indentMultiline(s, 2));
 
     // Inject the generated services in the constructor
     const injectString = (service: string) => `private ${camelCase(service)}: ${service}`;
     const injections = this._operationsToInclude
-      .map(op => injectString(op.serviceName))
-      .map(s => indentMultiline(s, 3))
-      .join(',\n');
+        .map(op => injectString(op.serviceName))
+        .map(s => indentMultiline(s, 3))
+        .join(',\n');
 
     const serviceName = this.config.serviceName || 'ApolloAngularSDK';
     const providedIn = this.config.serviceProvidedIn
-      ? `{ providedIn: ${this._parseNgModule(this.config.serviceProvidedIn).module} }`
-      : this.config.serviceProvidedInRoot === false
-        ? ''
-        : `{ providedIn: 'root' }`;
+        ? `{ providedIn: ${this._parseNgModule(this.config.serviceProvidedIn).module} }`
+        : this.config.serviceProvidedInRoot === false
+            ? ''
+            : `{ providedIn: 'root' }`;
 
     // Generate these types only if they're going to be used,
     // to avoid "unused variable" compile errors in generated code
     const omitType =
-      hasQueries || hasMutations || hasSubscriptions
-        ? `type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;`
-        : '';
+        hasQueries || hasMutations || hasSubscriptions
+            ? `type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;`
+            : '';
+
+    // For apollo-angular v12+ with Apollo Client 4, use type aliases with Apollo.Apollo namespace types
+    // (Apollo.Apollo accesses the class namespace from the module import)
+    // Apollo namespace uses <TData, TVariables> order
     const watchType = hasQueries
-      ? `interface WatchQueryOptionsAlone<V> extends Omit<ApolloCore.WatchQueryOptions<V>, 'query' | 'variables'> {}`
-      : '';
+        ? isV12Plus
+            ? `type WatchQueryOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.WatchQueryOptions<T, V>, 'query' | 'variables'>`
+            : `interface WatchQueryOptionsAlone<V> extends Omit<ApolloCore.WatchQueryOptions<V>, 'query' | 'variables'> {}`
+        : '';
     const queryType = hasQueries
-      ? `interface QueryOptionsAlone<V> extends Omit<ApolloCore.QueryOptions<V>, 'query' | 'variables'> {}`
-      : '';
+        ? isV12Plus
+            ? `type QueryOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.QueryOptions<T, V>, 'query' | 'variables'>`
+            : `interface QueryOptionsAlone<V> extends Omit<ApolloCore.QueryOptions<V>, 'query' | 'variables'> {}`
+        : '';
     const mutationType = hasMutations
-      ? `interface MutationOptionsAlone<T, V> extends Omit<ApolloCore.MutationOptions<T, V>, 'mutation' | 'variables'> {}`
-      : '';
+        ? isV12Plus
+            ? `type MutationOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.MutateOptions<T, V>, 'mutation' | 'variables'>`
+            : `interface MutationOptionsAlone<T, V> extends Omit<ApolloCore.MutationOptions<T, V>, 'mutation' | 'variables'> {}`
+        : '';
     const subscriptionType = hasSubscriptions
-      ? `interface SubscriptionOptionsAlone<V> extends Omit<ApolloCore.SubscriptionOptions<V>, 'query' | 'variables'> {}`
-      : '';
+        ? isV12Plus
+            ? `type SubscriptionOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.SubscribeOptions<T, V>, 'query' | 'variables'>`
+            : `interface SubscriptionOptionsAlone<V> extends Omit<ApolloCore.SubscriptionOptions<V>, 'query' | 'variables'> {}`
+        : '';
 
     const types = [omitType, watchType, queryType, mutationType, subscriptionType]
-      .filter(s => s)
-      .map(s => indent(s, 1))
-      .join('\n\n');
+        .filter(s => s)
+        .map(s => indent(s, 1))
+        .join('\n\n');
 
     return `
 ${types}

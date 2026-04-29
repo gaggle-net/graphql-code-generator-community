@@ -26,10 +26,10 @@ describe('Apollo Angular', () => {
   `);
 
   const validateTypeScript = async (
-    output: Types.PluginOutput,
-    testSchema: GraphQLSchema,
-    documents: Types.DocumentFile[],
-    config: any,
+      output: Types.PluginOutput,
+      testSchema: GraphQLSchema,
+      documents: Types.DocumentFile[],
+      config: any,
   ) => {
     const tsOutput = await tsPlugin(testSchema, documents, config, { outputFile: '' });
     const tsDocumentsOutput = await tsDocumentsPlugin(testSchema, documents, config, {
@@ -40,15 +40,33 @@ describe('Apollo Angular', () => {
   };
 
   describe('Imports', () => {
+    it('should import DocumentNode when using noGraphQLTag', async () => {
+      const docs = [{ location: '', document: basicDoc }];
+      const content = (await plugin(
+          schema,
+          docs,
+          {
+            noGraphQLTag: true,
+          },
+          {
+            outputFile: 'graphql.tsx',
+          },
+      )) as Types.ComplexPluginOutput;
+
+      expect(content.prepend).toContain(`import { DocumentNode } from 'graphql';`);
+      expect(content.prepend).not.toContain(`import gql from 'graphql-tag';`);
+      await validateTypeScript(content, schema, docs, {});
+    });
+
     it(`should use gql import from gqlImport config option`, async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        { gqlImport: 'graphql.macro#gql' },
-        {
-          outputFile: 'graphql.tsx',
-        },
+          schema,
+          docs,
+          { gqlImport: 'graphql.macro#gql' },
+          {
+            outputFile: 'graphql.tsx',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.prepend).toContain(`import { gql } from 'graphql.macro';`);
@@ -58,12 +76,12 @@ describe('Apollo Angular', () => {
     it(`should add the correct angular imports`, async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.tsx',
-        },
+          schema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.tsx',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.prepend).toContain(`import * as Apollo from 'apollo-angular';`);
@@ -74,12 +92,12 @@ describe('Apollo Angular', () => {
     it(`should add a constructor and super call (Issue #4366)`, async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`
@@ -94,14 +112,14 @@ describe('Apollo Angular', () => {
     it(`should add additional DI for constructor & super call`, async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {
-          additionalDI: ['testService: TestService', 'testService1: TestService1'],
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            additionalDI: ['testService: TestService', 'testService1: TestService1'],
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`
@@ -116,15 +134,15 @@ describe('Apollo Angular', () => {
     it(`should add explicit override to document and namedClient property`, async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {
-          addExplicitOverride: true,
-          namedClient: 'custom',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            addExplicitOverride: true,
+            namedClient: 'custom',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`override document = TestDocument;`);
@@ -135,14 +153,14 @@ describe('Apollo Angular', () => {
     it(`should add the correct angular imports with override`, async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {
-          apolloAngularPackage: 'my-custom-apollo-angular',
-        },
-        {
-          outputFile: 'graphql.tsx',
-        },
+          schema,
+          docs,
+          {
+            apolloAngularPackage: 'my-custom-apollo-angular',
+          },
+          {
+            outputFile: 'graphql.tsx',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.prepend).toContain(`import * as Apollo from 'my-custom-apollo-angular';`);
@@ -165,12 +183,12 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.prepend).toContain(`import { ${moduleName} } from '${modulePath}';`);
@@ -200,12 +218,12 @@ describe('Apollo Angular', () => {
 
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`document = MyFeedDocument;`);
@@ -218,100 +236,100 @@ describe('Apollo Angular', () => {
     });
 
     it('should output warning if documentMode = external and importDocumentNodeExternallyFrom is not set', async () => {
-      vi.spyOn(console, 'warn');
+      jest.spyOn(console, 'warn');
       const docs = [{ location: '', document: basicDoc }];
       await plugin(
-        schema,
-        docs,
-        {
-          documentMode: DocumentMode.external,
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            documentMode: DocumentMode.external,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       );
 
       // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledWith(
-        'importDocumentNodeExternallyFrom must be provided if documentMode=external',
+          'importDocumentNodeExternallyFrom must be provided if documentMode=external',
       );
     });
 
     it('output warning if importOperationTypesFrom is set to something other than "Operations"', async () => {
-      vi.spyOn(console, 'warn');
+      jest.spyOn(console, 'warn');
       const docs = [{ location: '', document: basicDoc }];
       await plugin(
-        schema,
-        docs,
-        {
-          documentMode: DocumentMode.external,
-          importOperationTypesFrom: 'Whatever',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            documentMode: DocumentMode.external,
+            importOperationTypesFrom: 'Whatever',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       );
 
       // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledWith(
-        'importOperationTypesFrom only works correctly when left empty or set to "Operations"',
+          'importOperationTypesFrom only works correctly when left empty or set to "Operations"',
       );
     });
 
     it('output warning if importOperationTypesFrom is set and documentMode is not "external"', async () => {
-      vi.spyOn(console, 'warn');
+      jest.spyOn(console, 'warn');
       const docs = [{ location: '', document: basicDoc }];
       await plugin(
-        schema,
-        docs,
-        {
-          importOperationTypesFrom: 'Operations',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            importOperationTypesFrom: 'Operations',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       );
 
       // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledWith(
-        '"importOperationTypesFrom" should be used with "documentMode=external" and "importDocumentNodeExternallyFrom"',
+          '"importOperationTypesFrom" should be used with "documentMode=external" and "importDocumentNodeExternallyFrom"',
       );
     });
 
     it('output warning if importOperationTypesFrom is set and importDocumentNodeExternallyFrom is not', async () => {
-      vi.spyOn(console, 'warn');
+      jest.spyOn(console, 'warn');
       const docs = [{ location: '', document: basicDoc }];
       await plugin(
-        schema,
-        docs,
-        {
-          documentMode: DocumentMode.external,
-          importOperationTypesFrom: 'Operations',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            documentMode: DocumentMode.external,
+            importOperationTypesFrom: 'Operations',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       );
 
       // eslint-disable-next-line no-console
       expect(console.warn).toHaveBeenCalledWith(
-        '"importOperationTypesFrom" should be used with "documentMode=external" and "importDocumentNodeExternallyFrom"',
+          '"importOperationTypesFrom" should be used with "documentMode=external" and "importDocumentNodeExternallyFrom"',
       );
     });
 
     it('should allow importing operations and documents from another file', async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {
-          documentMode: DocumentMode.external,
-          importOperationTypesFrom: 'Operations',
-          importDocumentNodeExternallyFrom: '@myproject/generated',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            documentMode: DocumentMode.external,
+            importOperationTypesFrom: 'Operations',
+            importDocumentNodeExternallyFrom: '@myproject/generated',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.prepend).toContain(`import * as Operations from '@myproject/generated';`);
@@ -335,12 +353,12 @@ describe('Apollo Angular', () => {
       `;
       const docs = [{ location: '', document: query }];
       const content = (await plugin(
-        rootSchema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.ts',
-        },
+          rootSchema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`
@@ -363,12 +381,12 @@ describe('Apollo Angular', () => {
 
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        schema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`document = MyFeedDocument;`);
@@ -399,15 +417,15 @@ describe('Apollo Angular', () => {
         { location: 'a.ts', document: myExtraFeed },
       ];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {
-          ngModule: './path/to/file#AppModule',
-          namedClient: 'custom',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {
+            ngModule: './path/to/file#AppModule',
+            namedClient: 'custom',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       // NgModule
@@ -445,28 +463,28 @@ describe('Apollo Angular', () => {
         }
       `);
       const vote = gql(`
-      mutation vote($repoFullName: String!, $type: VoteType!) {
-    vote(repoFullName: $repoFullName, type: $type) {
-      score
-      id
-      vote {
-        vote_value
-      }
-    }
-  }
+        mutation vote($repoFullName: String!, $type: VoteType!) {
+          vote(repoFullName: $repoFullName, type: $type) {
+            score
+            id
+            vote {
+              vote_value
+            }
+          }
+        }
       `);
       const commentAdded = gql(`
         subscription onCommentAdded($repoFullName: String!) {
-        commentAdded(repoFullName: $repoFullName) {
-          id
-          postedBy {
-            login
-            html_url
+          commentAdded(repoFullName: $repoFullName) {
+            id
+            postedBy {
+              login
+              html_url
+            }
+            createdAt
+            content
           }
-          createdAt
-          content
         }
-      }
       `);
       const docs = [
         { location: '', document: myFeed },
@@ -474,16 +492,16 @@ describe('Apollo Angular', () => {
         { location: '', document: vote },
       ];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {
-          querySuffix: 'QueryService',
-          mutationSuffix: 'MutationService',
-          subscriptionSuffix: 'SubscriptionService',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {
+            querySuffix: 'QueryService',
+            mutationSuffix: 'MutationService',
+            subscriptionSuffix: 'SubscriptionService',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toContain(`export class MyFeedQueryService`);
@@ -505,12 +523,12 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        { sdkClass: true },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          { sdkClass: true },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       // NgModule
@@ -545,12 +563,12 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        { sdkClass: true },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          { sdkClass: true },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`
@@ -574,12 +592,12 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        { sdkClass: true },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          { sdkClass: true },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`
@@ -602,12 +620,12 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        { sdkClass: true },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          { sdkClass: true },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`
@@ -630,16 +648,16 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {
-          sdkClass: true,
-          serviceName: 'MySDK',
-          serviceProvidedInRoot: false,
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            serviceName: 'MySDK',
+            serviceProvidedInRoot: false,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       // NgModule
@@ -674,15 +692,15 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {
-          sdkClass: true,
-          apolloAngularVersion: 1,
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            apolloAngularVersion: 1,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.prepend).toContain(`import * as ApolloCore from 'apollo-client';`);
@@ -699,15 +717,15 @@ describe('Apollo Angular', () => {
       `);
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        modifiedSchema,
-        docs,
-        {
-          sdkClass: true,
-          serviceProvidedIn: '../app.module#AppModule',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            serviceProvidedIn: '../app.module#AppModule',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       // NgModule import
@@ -718,21 +736,167 @@ describe('Apollo Angular', () => {
         export class ApolloAngularSDK {
       `);
     });
+
+    it('should combine variables into options for apolloAngularVersion 12+', async () => {
+      const modifiedSchema = extendSchema(schema, addToSchema);
+      const myFeed = gql(`
+        query MyFeed {
+          feed {
+            id
+          }
+        }
+      `);
+      const docs = [{ location: '', document: myFeed }];
+      const content = (await plugin(
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            apolloAngularVersion: 12,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
+      )) as Types.ComplexPluginOutput;
+
+      // For v12+, use type aliases with Apollo.Apollo namespace types
+      expect(content.content).toBeSimilarStringTo(`
+        type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
+        type WatchQueryOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.WatchQueryOptions<T, V>, 'query' | 'variables'>
+
+        type QueryOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.QueryOptions<T, V>, 'query' | 'variables'>`);
+
+      // For v12+, SDK methods should keep same signature but combine variables into options internally
+      // Watch method should have explicit return type for proper type inference
+      expect(content.content).toBeSimilarStringTo(`
+        myFeed(variables?: MyFeedQueryVariables, options?: QueryOptionsAlone<MyFeedQuery, MyFeedQueryVariables>) {
+          return this.myFeedGql.fetch({ ...options, variables })
+        }
+
+        myFeedWatch(variables?: MyFeedQueryVariables, options?: WatchQueryOptionsAlone<MyFeedQuery, MyFeedQueryVariables>): Apollo.QueryRef<MyFeedQuery, MyFeedQueryVariables> {
+          return this.myFeedGql.watch({ ...options, variables })
+        }
+      `);
+    });
+
+    it('should combine variables into options for mutations with apolloAngularVersion 12+', async () => {
+      const modifiedSchema = extendSchema(schema, addToSchema);
+      const myMutation = gql(`
+        mutation Update($arg: Int) {
+          update(arg: $arg) {
+            id
+          }
+        }
+      `);
+      const docs = [{ location: '', document: myMutation }];
+      const content = (await plugin(
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            apolloAngularVersion: 12,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
+      )) as Types.ComplexPluginOutput;
+
+      // For v12+, use type alias with Apollo.Apollo namespace
+      expect(content.content).toBeSimilarStringTo(`
+        type MutationOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.MutateOptions<T, V>, 'mutation' | 'variables'>`);
+
+      // For v12+, SDK methods should combine variables into options internally
+      expect(content.content).toBeSimilarStringTo(`
+        update(variables?: UpdateMutationVariables, options?: MutationOptionsAlone<UpdateMutation, UpdateMutationVariables>) {
+          return this.updateGql.mutate({ ...options, variables })
+        }
+      `);
+    });
+
+    it('should combine variables into options for subscriptions with apolloAngularVersion 12+', async () => {
+      const modifiedSchema = extendSchema(schema, addToSchema);
+      const mySubscription = gql(`
+        subscription MyFeed {
+          feed {
+            id
+          }
+        }
+      `);
+      const docs = [{ location: '', document: mySubscription }];
+      const content = (await plugin(
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            apolloAngularVersion: 12,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
+      )) as Types.ComplexPluginOutput;
+
+      // For v12+, use type alias with Apollo.Apollo namespace
+      expect(content.content).toBeSimilarStringTo(`
+        type SubscriptionOptionsAlone<T, V extends ApolloCore.OperationVariables> = Omit<Apollo.Apollo.SubscribeOptions<T, V>, 'query' | 'variables'>`);
+
+      // For v12+, SDK methods should combine variables into options internally
+      expect(content.content).toBeSimilarStringTo(`
+        myFeed(variables?: MyFeedSubscriptionVariables, options?: SubscriptionOptionsAlone<MyFeedSubscription, MyFeedSubscriptionVariables>) {
+          return this.myFeedGql.subscribe({ ...options, variables })
+        }
+      `);
+    });
+
+    it('should use legacy call syntax for apolloAngularVersion below 12', async () => {
+      const modifiedSchema = extendSchema(schema, addToSchema);
+      const myFeed = gql(`
+        query MyFeed {
+          feed {
+            id
+          }
+        }
+      `);
+      const docs = [{ location: '', document: myFeed }];
+      const content = (await plugin(
+          modifiedSchema,
+          docs,
+          {
+            sdkClass: true,
+            apolloAngularVersion: 11,
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
+      )) as Types.ComplexPluginOutput;
+
+      // For v11 and below, interfaces should not have OperationVariables constraint
+      expect(content.content).toBeSimilarStringTo(`
+        interface WatchQueryOptionsAlone<V> extends Omit<ApolloCore.WatchQueryOptions<V>, 'query' | 'variables'> {}`);
+      expect(content.content).not.toContain('OperationVariables');
+
+      // For v11 and below, SDK methods should pass variables and options separately
+      expect(content.content).toBeSimilarStringTo(`
+        myFeed(variables?: MyFeedQueryVariables, options?: QueryOptionsAlone<MyFeedQueryVariables>) {
+          return this.myFeedGql.fetch(variables, options)
+        }
+      `);
+    });
   });
 
   describe('near-operation-file', () => {
     it('Should use Operations when preset is near-operation-file', async () => {
       const docs = [{ location: '', document: basicDoc }];
       const content = (await plugin(
-        schema,
-        docs,
-        {
-          documentMode: DocumentMode.external,
-          importDocumentNodeExternallyFrom: 'near-operation-file',
-        },
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {
+            documentMode: DocumentMode.external,
+            importDocumentNodeExternallyFrom: 'near-operation-file',
+          },
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       expect(content.content).toBeSimilarStringTo(`@Injectable({
@@ -765,12 +929,12 @@ describe('Apollo Angular', () => {
 
       const docs = [{ location: '', document: myFeed }];
       const content = (await plugin(
-        schema,
-        docs,
-        {},
-        {
-          outputFile: 'graphql.ts',
-        },
+          schema,
+          docs,
+          {},
+          {
+            outputFile: 'graphql.ts',
+          },
       )) as Types.ComplexPluginOutput;
 
       await validateTypeScript(content, schema, docs, {});
