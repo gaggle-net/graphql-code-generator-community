@@ -5,7 +5,7 @@
   "description": "GraphQL Code Generator plugin for generating resolvers signature for Java backends",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dotansimha/graphql-code-generator-community.git",
+    "url": "https://github.com/gaggle-net/graphql-code-generator-community.git",
     "directory": "packages/plugins/java/resolvers"
   },
   "license": "MIT",

@@ -9,5 +9,5 @@ Please make sure to include the background for this request, and explain why it'
 
 <!--
 Please make sure that the request for this plugin does not already exists:
-https://github.com/dotansimha/graphql-code-generator/issues?q=is%3Aissue+is%3Aopen+label%3Anew-plugin
+https://github.com/gaggle-net/graphql-code-generator-community/issues?q=is%3Aissue+is%3Aopen+label%3Anew-plugin
 -->

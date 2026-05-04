@@ -5,7 +5,7 @@
   "description": "GraphQL Code Generator plugin for generating an enum with all loaded operations, for simpler and type-safe access",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dotansimha/graphql-code-generator-community.git",
+    "url": "https://github.com/gaggle-net/graphql-code-generator-community.git",
     "directory": "packages/plugins/typescript/named-operations-object"
   },
   "license": "MIT",

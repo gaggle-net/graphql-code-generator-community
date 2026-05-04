@@ -4,8 +4,8 @@
 
 ### Patch Changes
 
-- [#1444](https://github.com/dotansimha/graphql-code-generator-community/pull/1444)
-  [`6af41aa`](https://github.com/dotansimha/graphql-code-generator-community/commit/6af41aa62f5664d32603157733f5a5af280a0c8d)
+- [#1444](https://github.com/gaggle-net/graphql-code-generator-community/pull/1444)
+  [`6af41aa`](https://github.com/gaggle-net/graphql-code-generator-community/commit/6af41aa62f5664d32603157733f5a5af280a0c8d)
   Thanks [@eddeee888](https://github.com/eddeee888)! - dependencies updates:
   - Updated dependency
     [`@graphql-codegen/plugin-helpers@^6.3.0` ↗︎](https://www.npmjs.com/package/@graphql-codegen/plugin-helpers/v/6.3.0)
@@ -17,23 +17,23 @@
     [`@graphql-codegen/visitor-plugin-common@^6.3.0` ↗︎](https://www.npmjs.com/package/@graphql-codegen/visitor-plugin-common/v/6.3.0)
     (from `^6.2.4`, in `dependencies`)
 
-- [#1444](https://github.com/dotansimha/graphql-code-generator-community/pull/1444)
-  [`6af41aa`](https://github.com/dotansimha/graphql-code-generator-community/commit/6af41aa62f5664d32603157733f5a5af280a0c8d)
+- [#1444](https://github.com/gaggle-net/graphql-code-generator-community/pull/1444)
+  [`6af41aa`](https://github.com/gaggle-net/graphql-code-generator-community/commit/6af41aa62f5664d32603157733f5a5af280a0c8d)
   Thanks [@eddeee888](https://github.com/eddeee888)! - Bump official codegen package deps
 
 ## 5.0.0
 
 ### Major Changes
 
-- [#1387](https://github.com/dotansimha/graphql-code-generator-community/pull/1387)
-  [`0717cb7`](https://github.com/dotansimha/graphql-code-generator-community/commit/0717cb7f25f8ea33f54756119d01f072a3fb716c)
+- [#1387](https://github.com/gaggle-net/graphql-code-generator-community/pull/1387)
+  [`0717cb7`](https://github.com/gaggle-net/graphql-code-generator-community/commit/0717cb7f25f8ea33f54756119d01f072a3fb716c)
   Thanks [@eddeee888](https://github.com/eddeee888)! - Update GraphQL Codegen common packages to
   latest
 
 ### Patch Changes
 
-- [#1387](https://github.com/dotansimha/graphql-code-generator-community/pull/1387)
-  [`0717cb7`](https://github.com/dotansimha/graphql-code-generator-community/commit/0717cb7f25f8ea33f54756119d01f072a3fb716c)
+- [#1387](https://github.com/gaggle-net/graphql-code-generator-community/pull/1387)
+  [`0717cb7`](https://github.com/gaggle-net/graphql-code-generator-community/commit/0717cb7f25f8ea33f54756119d01f072a3fb716c)
   Thanks [@eddeee888](https://github.com/eddeee888)! - dependencies updates:
   - Updated dependency
     [`@graphql-codegen/plugin-helpers@^6.1.1` ↗︎](https://www.npmjs.com/package/@graphql-codegen/plugin-helpers/v/6.1.1)
@@ -49,21 +49,21 @@
 
 ### Patch Changes
 
-- [#355](https://github.com/dotansimha/graphql-code-generator-community/pull/355)
-  [`ca72b89`](https://github.com/dotansimha/graphql-code-generator-community/commit/ca72b89a601979799d0c10087535ff2acc4378f0)
+- [#355](https://github.com/gaggle-net/graphql-code-generator-community/pull/355)
+  [`ca72b89`](https://github.com/gaggle-net/graphql-code-generator-community/commit/ca72b89a601979799d0c10087535ff2acc4378f0)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
   - Updated dependency
     [`@graphql-codegen/visitor-plugin-common@2.13.8` ↗︎](https://www.npmjs.com/package/@graphql-codegen/visitor-plugin-common/v/2.13.8)
     (from `2.13.1`, in `dependencies`)
 
-- [#612](https://github.com/dotansimha/graphql-code-generator-community/pull/612)
-  [`5af565e`](https://github.com/dotansimha/graphql-code-generator-community/commit/5af565e6dada98e2341968ea37f343c5c348414a)
+- [#612](https://github.com/gaggle-net/graphql-code-generator-community/pull/612)
+  [`5af565e`](https://github.com/gaggle-net/graphql-code-generator-community/commit/5af565e6dada98e2341968ea37f343c5c348414a)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
   - Updated dependency [`tslib@^2.8.1` ↗︎](https://www.npmjs.com/package/tslib/v/2.8.1) (from
     `~2.8.0`, in `dependencies`)
 
-- [#828](https://github.com/dotansimha/graphql-code-generator-community/pull/828)
-  [`0c551ba`](https://github.com/dotansimha/graphql-code-generator-community/commit/0c551baf81b9d146a644a88e78bfc714894a9ab2)
+- [#828](https://github.com/gaggle-net/graphql-code-generator-community/pull/828)
+  [`0c551ba`](https://github.com/gaggle-net/graphql-code-generator-community/commit/0c551baf81b9d146a644a88e78bfc714894a9ab2)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
   - Updated dependency [`tslib@~2.8.0` ↗︎](https://www.npmjs.com/package/tslib/v/2.8.0) (from
     `~2.6.0`, in `dependencies`)
@@ -72,21 +72,21 @@
 
 ### Major Changes
 
-- [#411](https://github.com/dotansimha/graphql-code-generator-community/pull/411)
-  [`218778010`](https://github.com/dotansimha/graphql-code-generator-community/commit/2187780109269543d9024a9ee929dca215c5f406)
+- [#411](https://github.com/gaggle-net/graphql-code-generator-community/pull/411)
+  [`218778010`](https://github.com/gaggle-net/graphql-code-generator-community/commit/2187780109269543d9024a9ee929dca215c5f406)
   Thanks [@saihaj](https://github.com/saihaj)! - Drop support for Node.js 12 and 14. Require Node.js
   `>= 16`
 
 ### Patch Changes
 
-- [#422](https://github.com/dotansimha/graphql-code-generator-community/pull/422)
-  [`ef0adf8c2`](https://github.com/dotansimha/graphql-code-generator-community/commit/ef0adf8c2124e4b40d23c52966486a887f122b9b)
+- [#422](https://github.com/gaggle-net/graphql-code-generator-community/pull/422)
+  [`ef0adf8c2`](https://github.com/gaggle-net/graphql-code-generator-community/commit/ef0adf8c2124e4b40d23c52966486a887f122b9b)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
   - Updated dependency [`tslib@~2.6.0` ↗︎](https://www.npmjs.com/package/tslib/v/2.6.0) (from
     `~2.4.0`, in `dependencies`)
 
-- [#411](https://github.com/dotansimha/graphql-code-generator-community/pull/411)
-  [`218778010`](https://github.com/dotansimha/graphql-code-generator-community/commit/2187780109269543d9024a9ee929dca215c5f406)
+- [#411](https://github.com/gaggle-net/graphql-code-generator-community/pull/411)
+  [`218778010`](https://github.com/gaggle-net/graphql-code-generator-community/commit/2187780109269543d9024a9ee929dca215c5f406)
   Thanks [@saihaj](https://github.com/saihaj)! - fix(flutter-freezed): exported Patterns for
   advanced configuration
 
@@ -94,8 +94,8 @@
 
 ### Patch Changes
 
-- [#72](https://github.com/dotansimha/graphql-code-generator-community/pull/72)
-  [`c70b4ce49`](https://github.com/dotansimha/graphql-code-generator-community/commit/c70b4ce4967db700266a64d514b8c787e7c0cf9a)
+- [#72](https://github.com/gaggle-net/graphql-code-generator-community/pull/72)
+  [`c70b4ce49`](https://github.com/gaggle-net/graphql-code-generator-community/commit/c70b4ce4967db700266a64d514b8c787e7c0cf9a)
   Thanks [@MitkoTschimev](https://github.com/MitkoTschimev)! - missing trailing comma in enums
   Before
   ```dart
@@ -120,8 +120,8 @@
 
 ### Patch Changes
 
-- [#74](https://github.com/dotansimha/graphql-code-generator-community/pull/74)
-  [`349dc3a58`](https://github.com/dotansimha/graphql-code-generator-community/commit/349dc3a58bd7822cef984614d4282fa9d90e74be)
+- [#74](https://github.com/gaggle-net/graphql-code-generator-community/pull/74)
+  [`349dc3a58`](https://github.com/gaggle-net/graphql-code-generator-community/commit/349dc3a58bd7822cef984614d4282fa9d90e74be)
   Thanks [@Parables](https://github.com/Parables)! - docs(plugin config): :memo: updated
   plugin-config
 
@@ -160,8 +160,8 @@
 
 ### Major Changes
 
-- [#47](https://github.com/dotansimha/graphql-code-generator-community/pull/47)
-  [`f56200632`](https://github.com/dotansimha/graphql-code-generator-community/commit/f56200632b974be64b0c41c947620d46500ad9c3)
+- [#47](https://github.com/gaggle-net/graphql-code-generator-community/pull/47)
+  [`f56200632`](https://github.com/gaggle-net/graphql-code-generator-community/commit/f56200632b974be64b0c41c947620d46500ad9c3)
   Thanks [@Parables](https://github.com/Parables)! - # Configuring the plugin using patterns
 
   ## What has changed
@@ -271,14 +271,14 @@
 
 ### Patch Changes
 
-- [#8525](https://github.com/dotansimha/graphql-code-generator/pull/8525)
-  [`63dc8f205`](https://github.com/dotansimha/graphql-code-generator/commit/63dc8f2054e27b944f7d8dc59db8afa85760a127)
+- [#8525](https://github.com/gaggle-net/graphql-code-generator-community/pull/8525)
+  [`63dc8f205`](https://github.com/gaggle-net/graphql-code-generator-community/commit/63dc8f2054e27b944f7d8dc59db8afa85760a127)
   Thanks [@charlypoly](https://github.com/charlypoly)! - dependencies updates:
   - Updated dependency
     [`@graphql-codegen/visitor-plugin-common@2.13.0` ↗︎](https://www.npmjs.com/package/@graphql-codegen/visitor-plugin-common/v/2.13.0)
     (from `2.12.0`, in `dependencies`)
 - Updated dependencies
-  [[`63dc8f205`](https://github.com/dotansimha/graphql-code-generator/commit/63dc8f2054e27b944f7d8dc59db8afa85760a127)]:
+  [[`63dc8f205`](https://github.com/gaggle-net/graphql-code-generator-community/commit/63dc8f2054e27b944f7d8dc59db8afa85760a127)]:
   - @graphql-codegen/visitor-plugin-common@2.13.1
   - @graphql-codegen/plugin-helpers@2.7.2
 
@@ -286,6 +286,6 @@
 
 ### Patch Changes
 
-- [#8171](https://github.com/dotansimha/graphql-code-generator/pull/8171)
-  [`47f17f0d9`](https://github.com/dotansimha/graphql-code-generator/commit/47f17f0d9a2c4b57221397d3ec7f3882762b9cbe)
+- [#8171](https://github.com/gaggle-net/graphql-code-generator-community/pull/8171)
+  [`47f17f0d9`](https://github.com/gaggle-net/graphql-code-generator-community/commit/47f17f0d9a2c4b57221397d3ec7f3882762b9cbe)
   Thanks [@Parables](https://github.com/Parables)! - Flutter-freezed
