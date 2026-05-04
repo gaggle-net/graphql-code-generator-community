@@ -47,8 +47,10 @@
   },
   "publishConfig": {
     "directory": "dist",
-    "access": "public"
+    "access": "restricted",
+    "registry": "https://gaggle-460106496004.d.codeartifact.us-west-2.amazonaws.com/npm/gaggle/"
   },
+
   "sideEffects": false,
   "typescript": {
     "definition": "dist/typings/index.d.ts"
