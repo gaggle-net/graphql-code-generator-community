@@ -1,5 +1,13 @@
 # @graphql-codegen/typescript-type-graphql
 
+## 3.0.2-alpha.0
+
+### Patch Changes
+
+- [`21f5607`](https://github.com/gaggle-net/graphql-code-generator-community/commit/21f5607916df7d355aba12355ab6e7fa435b3e44)
+  Thanks [@daron-schmit-gaggle](https://github.com/daron-schmit-gaggle)! - Updated repo references
+  to reference gaggle resources [change-repo-references.md](change-repo-references.md)
+
 ## 3.0.1
 
 ### Patch Changes
@@ -7,7 +15,6 @@
 - [#355](https://github.com/gaggle-net/graphql-code-generator-community/pull/355)
   [`ca72b89`](https://github.com/gaggle-net/graphql-code-generator-community/commit/ca72b89a601979799d0c10087535ff2acc4378f0)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
-
   - Updated dependency
     [`@graphql-codegen/visitor-plugin-common@2.13.8` ↗︎](https://www.npmjs.com/package/@graphql-codegen/visitor-plugin-common/v/2.13.8)
     (from `2.13.1`, in `dependencies`)
@@ -15,7 +22,6 @@
 - [#612](https://github.com/gaggle-net/graphql-code-generator-community/pull/612)
   [`5af565e`](https://github.com/gaggle-net/graphql-code-generator-community/commit/5af565e6dada98e2341968ea37f343c5c348414a)
   Thanks [@renovate](https://github.com/apps/renovate)! - dependencies updates:
-
   - Updated dependency [`tslib@^2.8.1` ↗︎](https://www.npmjs.com/package/tslib/v/2.8.1) (from
     `~2.8.0`, in `dependencies`)
 

@@ -1,5 +1,16 @@
 # @graphql-codegen/c-sharp
 
+## 6.0.2-alpha.0
+
+### Patch Changes
+
+- [`21f5607`](https://github.com/gaggle-net/graphql-code-generator-community/commit/21f5607916df7d355aba12355ab6e7fa435b3e44)
+  Thanks [@daron-schmit-gaggle](https://github.com/daron-schmit-gaggle)! - Updated repo references
+  to reference gaggle resources [change-repo-references.md](change-repo-references.md)
+- Updated dependencies
+  [[`21f5607`](https://github.com/gaggle-net/graphql-code-generator-community/commit/21f5607916df7d355aba12355ab6e7fa435b3e44)]:
+  - @graphql-codegen/c-sharp-common@2.0.2-alpha.0
+
 ## 6.0.1
 
 ### Patch Changes

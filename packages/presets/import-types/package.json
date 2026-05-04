@@ -1,6 +1,6 @@
 {
   "name": "@graphql-codegen/import-types-preset",
-  "version": "4.0.1",
+  "version": "4.0.2-alpha.0",
   "type": "module",
   "description": "GraphQL Code Generator preset for importing types to operation file",
   "repository": {
