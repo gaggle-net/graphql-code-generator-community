@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/jsdoc",
+  "name": "@gaggle-net/jsdoc",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating JSDoc based types for GraphQL queries, mutations, subscriptions and fragments",

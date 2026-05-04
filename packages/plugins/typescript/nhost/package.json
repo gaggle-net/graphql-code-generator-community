@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/typescript-nhost",
+  "name": "@gaggle-net/typescript-nhost",
   "version": "1.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for the Typescript Nhost SDK",

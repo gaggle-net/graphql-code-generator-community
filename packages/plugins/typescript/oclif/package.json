@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/typescript-oclif",
+  "name": "@gaggle-net/typescript-oclif",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating a CLI tool with oclif",

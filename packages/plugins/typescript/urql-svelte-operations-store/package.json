@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/urql-svelte-operations-store",
+  "name": "@gaggle-net/urql-svelte-operations-store",
   "version": "3.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating wrapper for OperationsStore for Svelte & Urql",

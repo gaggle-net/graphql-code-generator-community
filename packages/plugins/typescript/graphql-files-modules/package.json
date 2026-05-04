@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/typescript-graphql-files-modules",
+  "name": "@gaggle-net/typescript-graphql-files-modules",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating TypeScript module declarations based on GraphQL operations",

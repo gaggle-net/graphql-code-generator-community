@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/java-apollo-android",
+  "name": "@gaggle-net/java-apollo-android",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating Java classes for Apollo-Android",

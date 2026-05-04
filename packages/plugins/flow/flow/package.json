@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/flow",
+  "name": "@gaggle-net/flow",
   "version": "3.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating Flow types",

@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/hasura-allow-list",
+  "name": "@gaggle-net/hasura-allow-list",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin to generate hasura allow liste metadata from graphql files",

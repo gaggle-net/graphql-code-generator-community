@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/java-common",
+  "name": "@gaggle-net/java-common",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator utils library for developing Java plugins",

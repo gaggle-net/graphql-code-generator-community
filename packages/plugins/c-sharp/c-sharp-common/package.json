@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/c-sharp-common",
+  "name": "@gaggle-net/c-sharp-common",
   "version": "2.0.1",
   "type": "module",
   "repository": "git@github.com:dotansimha/graphql-code-generator-community.git",

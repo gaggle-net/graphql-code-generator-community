@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/flow-operations",
+  "name": "@gaggle-net/flow-operations",
   "version": "3.0.2",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating Flow types for GraphQL operations (query/mutation/subscription/fragment)",

@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/java-resolvers",
+  "name": "@gaggle-net/java-resolvers",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating resolvers signature for Java backends",

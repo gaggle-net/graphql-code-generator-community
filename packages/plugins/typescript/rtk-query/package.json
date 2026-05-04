@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/typescript-rtk-query",
+  "name": "@gaggle-net/typescript-rtk-query",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for injecting graphql endpoints into a preconfigured RTK Query api",

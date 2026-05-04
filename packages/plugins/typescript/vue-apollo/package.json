@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/typescript-vue-apollo",
+  "name": "@gaggle-net/typescript-vue-apollo",
   "version": "5.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating ready-to-use Vue-Apollo composition functions based on GraphQL operations",

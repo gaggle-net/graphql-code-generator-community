@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/flutter-freezed",
+  "name": "@gaggle-net/flutter-freezed",
   "version": "5.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin to generate Freezed models from your GraphQL schema",

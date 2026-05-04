@@ -1,5 +1,5 @@
 {
-  "name": "@graphql-codegen/c-sharp-operations",
+  "name": "@gaggle-net/c-sharp-operations",
   "version": "4.0.1",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating CSharp code based on GraphQL operations",
