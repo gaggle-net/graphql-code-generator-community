@@ -33,7 +33,7 @@
       "@graphql-codegen/urql-introspection": [
         "packages/plugins/other/urql-introspection/src/index.ts"
       ],
-      "@graphql-codegen/typescript-apollo-angular": [
+      "@gaggle-net/typescript-apollo-angular": [
         "packages/plugins/typescript/apollo-angular/src/index.ts"
       ],
       "@graphql-codegen/typescript-enum-array": [

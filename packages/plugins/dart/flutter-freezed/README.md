@@ -27,7 +27,7 @@ For more advanced configuration, please refer to the
 Found a bug, confused about something, got a suggestion?
 
 Please
-[create a new issue](https://github.com/dotansimha/graphql-code-generator-community/issues/new/choose),
+[create a new issue](https://github.com/gaggle-net/graphql-code-generator-community/issues/new/choose),
 and tag/mention me `@Parables` in the issue so that I can address the issue as soon as possible.
 
 ## PRs are welcomed
@@ -36,4 +36,4 @@ This started as a plugin, but eventually we hope to make it way easier to use Gr
 Flutter apps.
 
 This plugin is found in the
-[graphql-code-generator-community](https://github.com/dotansimha/graphql-code-generator-community)
+[graphql-code-generator-community](https://github.com/gaggle-net/graphql-code-generator-community)

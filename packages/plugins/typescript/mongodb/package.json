@@ -1,11 +1,11 @@
 {
   "name": "@graphql-codegen/typescript-mongodb",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generting a ready-to-use ORM types for MongoDB",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dotansimha/graphql-code-generator-community.git",
+    "url": "https://github.com/gaggle-net/graphql-code-generator-community.git",
     "directory": "packages/plugins/typescript/mongodb"
   },
   "license": "MIT",
