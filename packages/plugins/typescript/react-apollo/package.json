@@ -1,11 +1,11 @@
 {
   "name": "@graphql-codegen/typescript-react-apollo",
-  "version": "4.4.2",
+  "version": "4.4.3-alpha.0",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating a ready-to-use React Components/HOC/Hooks based on GraphQL operations",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dotansimha/graphql-code-generator-community.git",
+    "url": "https://github.com/gaggle-net/graphql-code-generator-community.git",
     "directory": "packages/plugins/typescript/react-apollo"
   },
   "license": "MIT",

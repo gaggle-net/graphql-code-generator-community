@@ -1,11 +1,11 @@
 {
   "name": "@graphql-codegen/typescript-vue-apollo-smart-ops",
-  "version": "4.0.1",
+  "version": "4.0.2-alpha.0",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating typed Vue-Apollo Smart Query and mutation functions based on GraphQL operations",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dotansimha/graphql-code-generator-community.git",
+    "url": "https://github.com/gaggle-net/graphql-code-generator-community.git",
     "directory": "packages/plugins/typescript/vue-apollo-smart-ops"
   },
   "license": "MIT",
