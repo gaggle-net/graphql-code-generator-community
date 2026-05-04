@@ -24,18 +24,6 @@ body:
       label: Which packages are impacted by your issue?
       multiple: true
       options:
-        - '@graphql-codegen/c-sharp'
-        - '@graphql-codegen/c-sharp-common'
-        - '@graphql-codegen/c-sharp-operations'
-        - '@graphql-codegen/flutter-freezed'
-        - '@graphql-codegen/flow'
-        - '@graphql-codegen/flow-operations'
-        - '@graphql-codegen/flow-resolvers'
-        - '@graphql-codegen/java-apollo-android'
-        - '@graphql-codegen/java-common'
-        - '@graphql-codegen/java'
-        - '@graphql-codegen/kotlin'
-        - '@graphql-codegen/java-resolvers'
         - '@graphql-codegen/hasura-allow-list'
         - '@graphql-codegen/jsdoc'
         - '@graphql-codegen/urql-introspection'
