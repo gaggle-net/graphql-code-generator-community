@@ -1,5 +1,19 @@
 # @gaggle-net/typescript-apollo-angular
 
+## 5.0.3-alpha-20260505204818-06454a8f536ae29a9ceae6b70e5cee2bf1f209f2
+
+### Patch Changes
+
+- [#3](https://github.com/gaggle-net/graphql-code-generator-community/pull/3)
+  [`910e799`](https://github.com/gaggle-net/graphql-code-generator-community/commit/910e799f7fcc761e7ff2ab484372e271910c87de)
+  Thanks [@daron-schmit-gaggle](https://github.com/daron-schmit-gaggle)! - Updated repo references
+  to reference gaggle resources [change-repo-references.md](change-repo-references.md)
+
+- [#5](https://github.com/gaggle-net/graphql-code-generator-community/pull/5)
+  [`4e36ee8`](https://github.com/gaggle-net/graphql-code-generator-community/commit/4e36ee835470d020821529e5541c072741c3973a)
+  Thanks [@daron-schmit-gaggle](https://github.com/daron-schmit-gaggle)! - attempting to publish
+  this in gaggle
+
 ## 5.0.2
 
 ### Patch Changes
