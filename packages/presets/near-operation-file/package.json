@@ -1,11 +1,11 @@
 {
   "name": "@graphql-codegen/near-operation-file-preset",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "type": "module",
   "description": "GraphQL Code Generator preset for generating operation code near the operation file",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotansimha/graphql-code-generator-community.git",
+    "url": "git+https://github.com/gaggle-net/graphql-code-generator-community.git",
     "directory": "packages/presets/near-operation-file"
   },
   "license": "MIT",
@@ -52,8 +52,10 @@
   },
   "publishConfig": {
     "directory": "dist",
-    "access": "public"
+    "access": "restricted",
+    "registry": "https://gaggle-460106496004.d.codeartifact.us-west-2.amazonaws.com/npm/gaggle/"
   },
+
   "typescript": {
     "definition": "dist/typings/index.d.ts"
   }
