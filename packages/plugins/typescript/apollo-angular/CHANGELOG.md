@@ -1,5 +1,11 @@
 # @gaggle/typescript-apollo-angular
 
+## 5.0.3-alpha.0
+
+### Patch Changes
+
+- adjusted to use new alpha tag and @gaggle prefix
+
 ## 5.0.3-alpha-20260505204818-06454a8f536ae29a9ceae6b70e5cee2bf1f209f2
 
 ### Patch Changes
