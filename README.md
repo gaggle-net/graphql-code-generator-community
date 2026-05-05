@@ -21,15 +21,11 @@ plugins:
   `@graphql-codegen/named-operations-object`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Furql-introspection.svg)](https://badge.fury.io/js/%40graphql-codegen%2Furql-introspection) -
   `@graphql-codegen/urql-introspection`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fcli.svg)](htflow-resolverss://badge.fury.io/js/%40graphql-codegen%2Fflow-resolvers) -
-  `@graphql-codegen/flow-resolvers`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-apollo.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-apollo) -
   `@graphql-codegen/typescript-vue-apollo`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-rtk-query.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-rtk-query) -
   `@graphql-codegen/typescript-rtk-query`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fcli.svg)](htflow-operationss://badge.fury.io/js/%40graphql-codegen%2Fflow-operations) -
-  `@graphql-codegen/flow-operations`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fcli.svg)](httypescript-msws://badge.fury.io/js/%40graphql-codegen%2Ftypescript-msw) -
+- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-msw.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-msw) -
   `@graphql-codegen/typescript-msw`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-mongodb.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-mongodb) -
   `@graphql-codegen/typescript-mongodb`
@@ -43,14 +39,8 @@ plugins:
   `@graphql-codegen/jsdoc`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-urql.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-urql) -
   `@graphql-codegen/typescript-vue-urql`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fcli.svg)](htkotlins://badge.fury.io/js/%40graphql-codegen%2Fkotlin) -
-  `@graphql-codegen/kotlin`
-- [![npm version](https://badge.fury.io/js/%40graphql-cotypescript-vue-apollo-smart-ops%2Fcli.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-apollo-smart-ops) -
+- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-apollo-smart-ops.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-vue-apollo-smart-ops) -
   `@graphql-codegen/typescript-vue-apollo-smart-ops`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fcli.svg)](htjavas://badge.fury.io/js/%40graphql-codegen%2Fjava) -
-  `@graphql-codegen/java`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fc-sharp-operations.svg)](https://badge.fury.io/js/%40graphql-codegen%2Fc-sharp-operations) -
-  `@graphql-codegen/c-sharp-operations`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fhasura-allow-list.svg)](https://badge.fury.io/js/%40graphql-codegen%2Fhasura-allow-list) -
   `@graphql-codegen/hasura-allow-list`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-stencil-apollo.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-stencil-apollo) -
@@ -59,10 +49,6 @@ plugins:
   `@graphql-codegen/relay-operation-optimizer`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-oclif.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-oclif) -
   `@graphql-codegen/typescript-oclif`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fcli.svg)](htjava-resolverss://badge.fury.io/js/%40graphql-codegen%2Fjava-resolvers) -
-  `@graphql-codegen/java-resolvers`
-- [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Fjava-apollo-android.svg)](https://badge.fury.io/js/%40graphql-codegen%2Fjava-apollo-android) -
-  `@graphql-codegen/java-apollo-android`
 - [![npm version](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-nest.svg)](https://badge.fury.io/js/%40graphql-codegen%2Ftypescript-nest) -
   `@graphql-codegen/typescript-nest`
 
