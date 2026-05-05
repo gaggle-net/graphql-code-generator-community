@@ -61,5 +61,6 @@
     "yarn.lock": [
       "npx yarn-deduplicate"
     ]
-  }
+  },
+  "version": ""
 }

@@ -1,5 +1,11 @@
 # @gaggle/typescript-apollo-angular
 
+## 5.0.3-alpha.1
+
+### Patch Changes
+
+- 7528105: applied PR changes from @andreialecu
+
 ## 5.0.3-alpha.0
 
 ### Patch Changes
