@@ -4,19 +4,10 @@ const config: CodegenConfig = {
   hooks: { afterAllFileWrite: ['prettier --write'] },
   emitLegacyCommonJSImports: false,
   generates: {
-    './dev-test/test-schema/flow-types.flow.js': {
-      schema: './dev-test/test-schema/schema.json',
-      plugins: ['flow', 'flow-resolvers'],
-    },
     './dev-test/githunt/graphql-declared-modules.d.ts': {
       schema: './dev-test/githunt/schema.json',
       documents: ['./dev-test/githunt/**/*.graphql'],
       plugins: ['typescript-graphql-files-modules'],
-    },
-    './dev-test/githunt/flow.flow.js': {
-      schema: './dev-test/githunt/schema.json',
-      documents: './dev-test/githunt/**/*.graphql',
-      plugins: ['flow', 'flow-operations'],
     },
     './dev-test/githunt/types.reactApollo.tsx': {
       schema: './dev-test/githunt/schema.json',
