@@ -1,5 +1,12 @@
 # @gaggle/typescript-apollo-angular
 
+## 5.0.3-alpha-20260508215130-66c6cdd5172c314ba22d2d2fe9102ff53a386c8a
+
+### Patch Changes
+
+- 7528105: applied PR changes from @andreialecu
+- 231777f: adjusted to use new alpha tag and @gaggle prefix
+
 ## 5.0.3-alpha.1
 
 ### Patch Changes
