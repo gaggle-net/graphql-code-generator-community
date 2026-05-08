@@ -455,6 +455,7 @@ ${camelCase(o.node.name.value)}Watch(variables${
     return `
 ${types}
 
+  // FOOO - Daron was here
   @Injectable(${providedIn})
   export class ${serviceName} {
     constructor(
