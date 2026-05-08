@@ -1,5 +1,6 @@
 {
   "name": "graphql-code-generator",
+  "version": "",
   "private": true,
   "workspaces": [
     "packages/plugins/typescript/*"
@@ -15,6 +16,7 @@
     "prerelease": "yarn build",
     "prettier": "prettier --write --list-different .",
     "prettier:check": "prettier --check .",
+    "publish:alpha": "yarn prerelease && cd packages/plugins/typescript/apollo-angular/dist && npm version prerelease --preid=alpha && npm publish --tag alpha",
     "release": "changeset publish",
     "test": "vitest",
     "test-and-build": "yarn build && yarn test",
@@ -61,6 +63,5 @@
     "yarn.lock": [
       "npx yarn-deduplicate"
     ]
-  },
-  "version": ""
+  }
 }

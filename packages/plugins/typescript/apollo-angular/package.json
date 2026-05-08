@@ -1,6 +1,6 @@
 {
   "name": "@gaggle/typescript-apollo-angular",
-  "version": "5.0.3-alpha-20260508215130-66c6cdd5172c314ba22d2d2fe9102ff53a386c8a",
+  "version": "5.0.3-alpha.5",
   "type": "module",
   "description": "GraphQL Code Generator plugin for generating ready-to-use Angular Components based on GraphQL operations",
   "repository": {
