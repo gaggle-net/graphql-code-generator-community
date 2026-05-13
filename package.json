@@ -1,6 +1,5 @@
 {
   "name": "graphql-code-generator",
-  "version": "",
   "private": true,
   "workspaces": [
     "packages/plugins/typescript/*"
