@@ -6,12 +6,7 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [],
-  "changelog": [
-    "@changesets/changelog-github",
-    {
-      "repo": "gaggle-net/graphql-code-generator-community"
-    }
-  ],
+  "changelog": "@changesets/cli/changelog",
   "snapshot": {
     "useCalculatedVersion": true,
     "prereleaseTemplate": "{tag}-{datetime}-{commit}"
