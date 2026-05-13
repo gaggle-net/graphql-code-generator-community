@@ -17,6 +17,7 @@
     "prettier": "prettier --write --list-different .",
     "prettier:check": "prettier --check .",
     "publish:alpha": "yarn prerelease && cd packages/plugins/typescript/apollo-angular/dist && npm version prerelease --preid=alpha && npm publish --tag alpha",
+    "publish": "yarn build && cd packages/plugins/typescript/apollo-angular/dist && npm publish --tag latest",
     "release": "changeset publish",
     "test": "vitest",
     "test-and-build": "yarn build && yarn test",
